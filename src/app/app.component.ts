@@ -21,9 +21,17 @@ export class AppComponent {
             fieldGroupClassName: 'row',
             fieldGroup: [
               {
+                className: 'col col-lg-2',
+                type: 'checkbox',
+                key: 'consumidorFinal',
+                templateOptions: {
+                  label: 'Consumidor Final',
+                },
+              },
+              {
                 key: 'razonSocial',
                 type: 'input',
-                className: 'col-md-6',
+                className: 'col col-lg-4',
                 templateOptions: {
                   label: 'Nombre o Razón Social',
                   required: true,
@@ -31,12 +39,25 @@ export class AppComponent {
                 },
               },
               {
-                key: 'nombreFantasia',
+                key: 'cuit',
                 type: 'input',
-                className: 'col-md-6',
+                className: 'col col-lg-2',
                 templateOptions: {
-                  label: 'Nombre de Fantasia',
-                  appearance: 'outline',
+                  label: 'DNI/CUIT',
+                  type: 'number',
+                  minLength: 7,
+                  maxLength: 11,
+                  enableWorkCount: true,
+                }
+              },
+              {
+                key: 'tipoCbteId',
+                type: 'select',
+                className: 'col col-lg-4',
+                templateOptions: {
+                  label: 'Tipo de Comprobante',
+                  minLength: 7,
+                  maxLength: 11,
                   enableWorkCount: true,
                 },
               },
@@ -46,25 +67,21 @@ export class AppComponent {
             fieldGroupClassName: 'row',
             fieldGroup: [
               {
-                key: 'condicionFiscalId',
+                key: 'puntoVenta',
                 type: 'select',
-                className: 'col-md-6',
+                className: 'col col-lg-2',
                 templateOptions: {
-                  label: 'Condición Fiscal frente al IVA',
+                  label: 'Punto de Venta',
                   appearance: 'outline',
                 },
               },
               {
-                key: 'cuitid',
+                key: 'fechaCbte',
                 type: 'input',
-                className: 'col-md-3',
+                className: 'col col-lg-2',
                 templateOptions: {
-                  label: 'DNI/CUIT',
-                  type: 'number',
-                  minLength: 7,
-                  maxLength: 11,
-                  appearance: 'outline',
-                  enableWorkCount: true,
+                  label: 'Fecha',
+                  type: 'date',
                 },
               },
             ],
