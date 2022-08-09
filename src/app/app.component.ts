@@ -37,6 +37,9 @@ export class AppComponent {
                   required: true,
                   appearance: 'outline',
                 },
+                expressionProperties: {
+                  'templateOptions.disabled': 'model.consumidorFinal',
+                },
               },
               {
                 key: 'cuit',
