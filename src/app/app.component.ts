@@ -20,14 +20,15 @@ export class AppComponent {
           {
             fieldGroupClassName: 'row',
             fieldGroup: [
-              {
-                key: 'consumidorFinal',
-                type: 'checkbox',
-                className: 'col col-lg-2',
-                templateOptions: {
-                  label: 'Consumidor Final',
-                },
-              },
+              //Solo en comprobantes venta y venta en negro
+              // {
+              //   key: 'consumidorFinal',
+              //   type: 'checkbox',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Consumidor Final',
+              //   },
+              // },
               {
                 key: 'razonSocial',
                 type: 'input',
@@ -61,7 +62,7 @@ export class AppComponent {
               {
                 key: 'cbteTipoId',
                 type: 'select',
-                className: 'col col-lg-5',
+                className: 'col col-lg-4',
                 templateOptions: {
                   label: 'Tipo de Comprobante',
                   required: true,
@@ -72,23 +73,44 @@ export class AppComponent {
                   ]
                 },
               },
+              //solo en cbtes venta debido o credito mipyme
+              // {
+              //   key: 'anulaCbteAsociado',
+              //   type: 'checkbox',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Anula comprobante asociado',
+              //   },
+              //   expressionProperties: {
+              //     hideExpression: 'model.cbteTipoId === "1"',
+              //   },
+              // },
+              //solo habilitar para comprobantes venta
+              // {
+              //   key: 'puntoVenta',
+              //   type: 'select',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Punto de Venta',
+              //     required: true,
+              //   },
+              // },
+              //solo habilitar para comprobantes compra
+              // {
+              //   key: 'puntoVenta',
+              //   type: 'input',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Punto de Venta',
+              //     required: true,
+              //   },
+              // },
               {
-                key: 'anulaCbteAsociado',
-                type: 'checkbox',
-                className: 'col col-lg-3',
-                templateOptions: {
-                  label: 'Anula comprobante asociado',
-                },
-                expressionProperties: {
-                  hideExpression: 'model.cbteTipoId === "1"',
-                },
-              },
-              {
-                key: 'puntoVenta',
-                type: 'select',
+                key: 'nroComprobante',
+                type: 'input',
                 className: 'col col-lg-2',
                 templateOptions: {
-                  label: 'Punto de Venta',
+                  label: 'N° comprobante',
                   required: true,
                 },
               },
@@ -106,36 +128,37 @@ export class AppComponent {
           },
           {
             fieldGroupClassName: 'row',
-            fieldGroup: [             
-              {
-                key: 'monedaId',
-                type: 'select',
-                className: 'col col-lg-2',
-                templateOptions: {
-                  label: 'Moneda',
-                  required: true,
-                  options: [
-                    { label: 'PESO ARG', value: 'PES' },
-                    { label: 'DOLAR', value: 'DOL' },
-                  ],
-                },
-              },
-              {
-                key: 'cotizacion',
-                type: 'input',
-                className: 'col col-lg-1',
-                defaultValue: 1,
-                expressionProperties: {
-                  'templateOptions.disabled': 'model.monedaId === "PES"',
-                },
-                templateOptions: {
-                  label: 'Cotización',
-                  type: 'number',
-                  required: true,
-                  placeholder: '',
-                },      
-                hideExpression: 'model.monedaId === "PES"',
-              },
+            fieldGroup: [      
+              //solo para comprobantes       
+              // {
+              //   key: 'monedaId',
+              //   type: 'select',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Moneda',
+              //     required: true,
+              //     options: [
+              //       { label: 'PESO ARG', value: 'PES' },
+              //       { label: 'DOLAR', value: 'DOL' },
+              //     ],
+              //   },
+              // },
+              // {
+              //   key: 'cotizacion',
+              //   type: 'input',
+              //   className: 'col col-lg-1',
+              //   defaultValue: 1,
+              //   expressionProperties: {
+              //     'templateOptions.disabled': 'model.monedaId === "PES"',
+              //   },
+              //   templateOptions: {
+              //     label: 'Cotización',
+              //     type: 'number',
+              //     required: true,
+              //     placeholder: '',
+              //   },      
+              //   hideExpression: 'model.monedaId === "PES"',
+              // },
               {
                 key: 'condicionVentaid',
                 type: 'select',
@@ -164,55 +187,58 @@ export class AppComponent {
           {
             fieldGroupClassName: 'row',
             fieldGroup: [
-              {
-                key: 'conceptoId',
-                type: 'select',
-                className: 'col col-lg-2',
-                templateOptions: {
-                  label: 'Concepto',
-                  required: TextTrackCue,
-                  options: [
-                    { label: 'PRODUCTOS', value: '1' },
-                    { label: 'SERVICIOS', value: '2' },
-                    { label: 'PRODUCTOS Y SERVICIOS', value: '3' },
-                  ]
-                },
-              },
-              {
-                key: 'fechaDesde',
-                type: 'input',
-                className: 'col col-lg-2',
-                templateOptions: {
-                  label: 'Serv. Desde',
-                  type: 'date',
-                  required: true,
-                },
-                expressionProperties: {
-                  'templateOptions.disabled': 'model.conceptoId === "1"',
-                },
-              },
-              {
-                key: 'fechaHasta',
-                type: 'input',
-                className: 'col col-lg-2',
-                templateOptions: {
-                  label: 'Serv. Hasta',
-                  type: 'date',
-                  required: true,
-                },
-                expressionProperties: {
-                  'templateOptions.disabled': 'model.conceptoId === "1"',
-                },
-              },
-              {
-                key: 'listaPrecioId',
-                type: 'select',
-                className: 'col col-lg-4',
-                templateOptions: {
-                  label: 'Lista de Precios',
-                  required: true,
-                },
-              },
+              // solo en comprobantes, y mandatorio en ventas de acuerdo al valor de concepto
+              // {
+              //   key: 'conceptoId',
+              //   type: 'select',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Concepto',
+              //     required: TextTrackCue,
+              //     options: [
+              //       { label: 'PRODUCTOS', value: '1' },
+              //       { label: 'SERVICIOS', value: '2' },
+              //       { label: 'PRODUCTOS Y SERVICIOS', value: '3' },
+              //     ]
+              //   },
+              // },
+              // solo en comprobantes, y mandatorio en ventas de acuerdo al valor de concepto
+              // {
+              //   key: 'fechaDesde',
+              //   type: 'input',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Serv. Desde',
+              //     type: 'date',
+              //     required: true,
+              //   },
+              //   expressionProperties: {
+              //     'templateOptions.disabled': 'model.conceptoId === "1"',
+              //   },
+              // },
+              // {
+              //   key: 'fechaHasta',
+              //   type: 'input',
+              //   className: 'col col-lg-2',
+              //   templateOptions: {
+              //     label: 'Serv. Hasta',
+              //     type: 'date',
+              //     required: true,
+              //   },
+              //   expressionProperties: {
+              //     'templateOptions.disabled': 'model.conceptoId === "1"',
+              //   },
+              // },
+              //solo en los de venta
+              // {
+              //   key: 'listaPrecioId',
+              //   type: 'select',
+              //   className: 'col col-lg-4',
+              //   templateOptions: {
+              //     label: 'Lista de Precios',
+              //     required: true,
+              //   },
+              // },
               {
                 key: 'descuento',
                 type: 'input',
@@ -224,6 +250,7 @@ export class AppComponent {
               },
             ],
           },
+          { template: '<hr />' },
           {
             type: 'tabset',
             fieldGroup: [
