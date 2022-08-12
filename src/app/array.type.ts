@@ -4,7 +4,7 @@ import { FieldArrayType } from '@ngx-formly/core';
 @Component({
   selector: 'formly-array-type',
   template: `
-  <ng-container *ngFor="let field of field.fieldGroup; let i = index;">
+  <ng-container *ngFor="let field of field.fieldGroup; let i = index;">        
       <formly-field [field]="field"></formly-field>
     </ng-container>
     <div style="margin:30px 0;">

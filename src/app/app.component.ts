@@ -248,6 +248,169 @@ export class AppComponent {
                   required: false,
                 },
               },
+              {
+                type: 'tabset',
+                fieldGroup: [
+                  {
+                    key: 'detalles',
+                    type: 'arrayRepeat',
+                    templateOptions: {
+                      addText: 'Item',
+                    },
+                    fieldArray: {
+                      fieldGroupClassName: 'row',
+                      fieldGroup: [
+                        {
+                          key: 'nombre',
+                          type: 'input',
+                          className: 'col col-lg-3', 
+                          templateOptions: {
+                            label: 'Item',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'descripcion',
+                          type: 'input',
+                          className: 'col col-lg-3', 
+                          templateOptions: {
+                            label: 'Descripción',
+                          },
+                        },
+                        {
+                          key: 'cantidad',
+                          type: 'input',
+                          className: 'col col-lg-1',
+                          templateOptions: {
+                            label: 'Cantidad',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'precio',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'Precio',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'iva',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'IVA',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'descuento',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'Descuento',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'subtotal',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'Subtotal',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    key: 'detalles2',
+                    type: 'arrayRepeat',
+                    templateOptions: {
+                      addText: 'Item',
+                    },
+                    fieldArray: {
+                      fieldGroupClassName: 'row',
+                      fieldGroup: [
+                        {
+                          key: 'nombre',
+                          type: 'input',
+                          className: 'col col-lg-3', 
+                          templateOptions: {
+                            label: 'Item',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'descripcion',
+                          type: 'input',
+                          className: 'col col-lg-3', 
+                          templateOptions: {
+                            label: 'Descripción',
+                          },
+                        },
+                        {
+                          key: 'cantidad',
+                          type: 'input',
+                          className: 'col col-lg-1',
+                          templateOptions: {
+                            label: 'Cantidad',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'precio',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'Precio',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'iva',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'IVA',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'descuento',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'Descuento',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                        {
+                          key: 'subtotal',
+                          type: 'input',
+                          className: 'col col-lg-1',                       
+                          templateOptions: {
+                            label: 'Subtotal',
+                            type:'number',
+                            required: true,
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ]
+              }
             ],
           },
           { template: '<hr />' },
@@ -462,5 +625,6 @@ export class AppComponent {
 
   submit(model) {
     console.log(model);
+    console.log(this.form.value);
   }
 }
